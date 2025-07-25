@@ -5,17 +5,20 @@
     const userSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        trim: true  // prevent whitespace issues
     },
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        lowercase: true, // makes email comparisons more reliable
+        trim: true
     },
     password: {
         type: String,
         required: function () {
-        return !this.googleId;
+        return !this.googleId; // handles Google-only users
         }
     },
     googleId: {
@@ -28,7 +31,8 @@
     }
     }, { minimize: false });
 
-    // Signup static method
+
+    // Static method for signup
     userSchema.statics.signup = async function (name, email, password) {
     if (!name || !email || !password) {
         throw Error('All fields are required');
@@ -42,8 +46,8 @@
         throw Error('Weak password. Use at least 8 characters, including uppercase, lowercase, number, and symbol.');
     }
 
-    const exists = await this.findOne({ email });
-    if (exists) {
+    const existingUser = await this.findOne({ email });
+    if (existingUser) {
         throw Error('Email already in use');
     }
 
@@ -54,23 +58,30 @@
     return user;
     };
 
-    // Login static method
+
+    // Static method for login
     userSchema.statics.login = async function (email, password) {
     if (!email || !password) {
         throw Error('All fields are required');
     }
 
     const user = await this.findOne({ email });
-    if (!user || !user.password) {
-        throw Error('Invalid email or user uses Google login');
+    if (!user) {
+        throw Error('Invalid email');
     }
 
-    const match = await bcrypt.compare(password, user.password);
-    if (!match) {
+    if (!user.password) {
+        throw Error('Account uses Google login. Try signing in with Google.');
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
         throw Error('Incorrect password');
     }
 
     return user;
     };
 
+
     module.exports = mongoose.model('User', userSchema);
+
