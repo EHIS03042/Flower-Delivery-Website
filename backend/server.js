@@ -14,7 +14,7 @@
     const MONGO_URI = process.env.MONGODB_URI;
 
     if (!MONGO_URI) {
-    console.error(" MONGODB_URI is not defined in .env");
+    console.error(" MONGODB_URI not defined in .env");
     process.exit(1); // Exit the server early
     }
 
@@ -36,7 +36,7 @@
 
     // Root route
     app.get('/', (req, res) => {
-    res.send(' Flower Delivery API is running...');
+    res.send(' Flower Delivery API is running');
     });
 
     // Start the server
