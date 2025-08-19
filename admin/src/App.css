@@ -7,6 +7,30 @@
   pointer-events: none;
 }
 
+.app-container { 
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.app-title {
+  color: darkred;
+}
+
+.navbar {
+  margin: 10px 0;
+}
+
+.nav-link {
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: darkblue;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
