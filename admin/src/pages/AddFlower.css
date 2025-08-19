@@ -1,0 +1,31 @@
+/* Styling for AddFlower */
+    .add-flower-container {
+    max-width: 400px;
+    margin: auto;
+    }
+
+    .add-flower-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    }
+
+    .add-flower-form input,
+    .add-flower-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+
+    .submit-btn {
+    padding: 8px 15px;
+    background: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    .submit-btn:hover {
+    background: seagreen;
+    }
