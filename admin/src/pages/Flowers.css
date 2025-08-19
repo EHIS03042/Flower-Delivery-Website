@@ -1,0 +1,38 @@
+/* Styling for Flowers */
+    .flowers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    }
+
+    .flower-card {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fafafa;
+    }
+
+    .flower-image {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    }
+
+    .flower-details {
+    margin-left: 15px;
+    }
+
+    .delete-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: crimson;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    .delete-btn:hover {
+    background: darkred;
+    }
