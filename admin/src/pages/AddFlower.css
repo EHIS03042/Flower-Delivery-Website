@@ -1,5 +1,5 @@
 /* Styling for AddFlower */
-    .add-flower-container {
+    /* .add-flower-container {
     max-width: 400px;
     margin: auto;
     }
@@ -28,4 +28,67 @@
 
     .submit-btn:hover {
     background: seagreen;
+    } */
+
+    .add-flower-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fafafa;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .add-flower-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    }
+
+    .add-flower-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    }
+
+    .add-flower-form input,
+    .add-flower-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+    }
+
+    .add-flower-form input:focus,
+    .add-flower-form textarea:focus {
+    border-color: #4caf50;
+    }
+
+    .add-flower-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    }
+
+    .add-flower-form button:hover {
+    background-color: #45a049;
+    }
+
+    .success-message {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e7f9ed;
+    color: #2d7a34;
+    border: 1px solid #b6e0bb;
+    border-radius: 8px;
+    text-align: center;
     }
