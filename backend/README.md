@@ -166,9 +166,10 @@ Error Handling
 •	404 Not Found: Resource not found
 •	500 Internal Server Error: Server crash or misconfiguration
 
+## Presentation Link(Loom Video) Milestone 1
+[[Presentation Link](https://www.loom.com/share/01d3878d146f48498fc133eb910dd095?sid=70aa91f3-b4e5-452a-b78b-46056c6b2a0b)]
 
-
-## Presentation Link(Loom Video)
+## Presentation Link(Loom Video) Milestone 2
 [[Presentation Link](https://www.loom.com/share/69083b5e6a0140b2baeab91725fa6da4?sid=74ad1d57-125d-4e68-b64d-188528542952)]
 
 ## Live Demo(on Render.com)

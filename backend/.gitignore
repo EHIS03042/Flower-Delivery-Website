@@ -10,3 +10,4 @@ backend/.env
 jspm_packages/
 
 
+/backend/uploads/
