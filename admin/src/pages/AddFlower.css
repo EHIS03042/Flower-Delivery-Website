@@ -30,7 +30,8 @@
     background: seagreen;
     } */
 
-    .add-flower-container {
+    /* Re-Style 1 */
+    /* .add-flower-container {
     max-width: 500px;
     margin: 40px auto;
     padding: 20px;
@@ -91,4 +92,61 @@
     border: 1px solid #b6e0bb;
     border-radius: 8px;
     text-align: center;
+    } */
+
+    /* Restyle 2 */
+    .add-flower-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
     }
+
+    .add-flower-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    }
+
+    .add-flower-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    }
+
+    .add-flower-form input,
+    .add-flower-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    }
+
+    .add-flower-form textarea {
+    min-height: 80px;
+    resize: vertical;
+    }
+
+    .add-flower-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    }
+
+    .add-flower-form button:hover {
+    background-color: #45a049;
+    }
+
+    .image-preview {
+    margin-top: 20px;
+    text-align: center;
+    }
+
+    .image-preview img {
+    width: 200px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}

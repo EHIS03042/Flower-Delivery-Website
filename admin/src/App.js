@@ -3,6 +3,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Flowers from "./pages/Flowers";
 import AddFlower from "./pages/AddFlower";
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import "./App.css";
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
           <Route path="/add-flower" element={<AddFlower />} />
         </Routes>
       </div>
+      <ToastContainer position="top-right" autoClose={3001} />
     </Router>
   );
 }
