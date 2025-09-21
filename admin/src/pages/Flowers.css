@@ -1,170 +1,84 @@
-/* Styling for Flowers */
-    /* .flowers-container {
+        /* 🌸 Flowers.css (merged & optimized) */
+
+        /* Container */
+    /* 🌸 Flowers.css (optimized for Cloudinary lazy-loading) */
+
+    /* Container */
+    .flowers-container {
+    padding: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
     }
 
-    .flower-card {
-    display: flex;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    background: #fafafa;
-    }
-
-    .flower-image {
-    width: 150px;
-    height: auto;
-    border-radius: 5px;
-    }
-
-    .flower-details {
-    margin-left: 15px;
-    }
-
-    .delete-btn {
-    margin-top: 10px;
-    padding: 6px 12px;
-    background: crimson;
-    border: none;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    }
-
-    .delete-btn:hover {
-    background: darkred;
-    } */
-
-    /* Comment ou above and below */
-    /* .flowers-container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
-    }
-
-    .flowers-container h2 {
+    /* Admin Header */
+    .admin-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e63946; /* red accent */
+    margin-bottom: 20px;
     text-align: center;
-    margin-bottom: 30px;
-    color: #333;
     }
 
-    .flowers-grid {
+    /* Responsive grid for flower cards */
+    .flowers-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     }
 
+    /* Each flower card */
     .flower-card {
-    border: 1px solid #ddd;
+    background: #fff;
     border-radius: 12px;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    padding: 16px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     transition: transform 0.2s ease-in-out;
     }
 
     .flower-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
     }
 
-    .flower-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    }
-
-    .flower-card h3 {
-    margin: 10px 0 5px;
-    color: #222;
-    }
-
-    .flower-card p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 8px;
-    }
-
-    .flower-card .price {
-    font-weight: bold;
-    color: #4caf50;
-    margin-bottom: 12px;
-    }
-
-    .delete-button {
-    padding: 8px 14px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    }
-
-    .delete-button:hover {
-    background-color: #d32f2f;
-    } */
-
-    /* Replace */
-    .flowers-container {
-    padding: 25px;
-    }
-
-    .admin-header {
-    font-size: 22px;
-    font-weight: bold;
-    color: red;
-    margin-bottom: 20px;
-    }
-
-    .flowers-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    }
-
-    .flower-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 15px;
-    }
-
+    /* Image wrapper */
     .flower-image {
-    max-width: fit-content;
-    height: 150px;
-    border: 1px solid #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 12px;
     border-radius: 12px;
+    overflow: hidden;
     background-color: #f9f9f9;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
 
-    .flower-image img {
-    width: auto;
-    height: auto;
-    max-width: 280px;
+    /* Flower image itself */
+    .flower-img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 12px;
-    transition: transform 0.3s ease-in-out;
+    opacity: 0; /* start hidden */
+    transition: opacity 0.4s ease; /* smooth fade-in */
     }
 
+    /* ✅ Trigger fade-in when loaded */
+    .flower-img.loaded {
+    opacity: 1;
+    }
+
+    /* Placeholder while loading */
     .image-placeholder {
-    
-    width: 100%;
-    max-width: 280px;
-    height: 200px;
+    position: absolute;
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,21 +89,47 @@
     text-align: center;
     }
 
+    /* Spinner animation */
+    .spinner {
+    width: 32px;
+    height: 32px;
+    border: 4px solid #f3f3f3; /* light gray */
+    border-top: 4px solid #e63946; /* red accent */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+    }
+
+    /* Flower details */
+    .flower-details h3 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    color: #222;
+    }
+
     .flower-details p {
-    margin: 5px 0;
-    font-size: 12px;
+    margin: 4px 0;
+    font-size: 14px;
+    color: #444;
     }
 
     .label {
-    color: red;
+    font-weight: bold;
+    color: #e63946; /* red accent */
     }
 
+    /* Delete button */
     .delete-btn {
-    background-color: #e63946;
-    color: white;
-    border: none;
-    padding: 8px 12px;
     margin-top: 10px;
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
@@ -200,71 +140,24 @@
     background-color: #d62828;
     }
 
-    /* Container for each flower image */
-    .flower-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 12px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    /* ============================= */
+    /* 📱 RESPONSIVE DESIGN BREAKPOINTS */
+    /* ============================= */
+
+    /* Mobile (stacked cards) */
+    @media (max-width: 600px) {
+    .flowers-list {
+        grid-template-columns: 1fr;
     }
-
-    /* Default image style */
-    .flower-img {
-    width: 100%;
-    height: auto;
-    max-width: 280px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.3s ease-in-out;
-    }
-
-    /* Hover effect */
-    .flower-img:hover {
-    transform: scale(1.05);
-    }
-
-    /* Placeholder style */
-    .image-placeholder {
-    width: 100%;
-    max-width: 280px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ececec;
-    border-radius: 12px;
-    color: #888;
-    font-size: 14px;
-    text-align: center;
-}
-
-/* RESPONSIVE DESIGN */
-
-/* Small devices (mobile) */
-@media (max-width: 600px) {
-    .flower-img,
-    .image-placeholder {
-        max-width: 100%;
-        height: auto;
+    .flower-card {
+        text-align: center;
+        align-items: center;
     }
     }
 
-    /* Medium devices (tablet) */
+    /* Tablets */
     @media (min-width: 601px) and (max-width: 1024px) {
-    .flower-img, .image-placeholder {
-        max-width: 160px;
-        height: auto;
-    }
-    }
-
-    /* Large devices (desktop) */
-    @media (min-width: 1025px) {
-    .flower-img, .image-placeholder {
-        max-width: 180px;
-        height: auto;
+    .flowers-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
     }

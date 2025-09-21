@@ -166,11 +166,42 @@ Error Handling
 •	404 Not Found: Resource not found
 •	500 Internal Server Error: Server crash or misconfiguration
 
+## Milestone 3 – Admin Panel & Cloudinary Integration
+
+This milestone focuses on improving the Admin Panel and image handling pipeline.
+
+###  Key Updates
+- **Cloudinary Integration**  
+  - All flower images are now uploaded to Cloudinary instead of being stored locally.  
+  - Backend automatically saves the Cloudinary URL in MongoDB.  
+
+- **Admin AddFlower Form**  
+  - Supports image uploads with preview.  
+  - After saving, the Cloudinary-hosted image URL is displayed instantly.  
+  - Form layout reorganized for better usability.  
+
+- **Data Consistency**  
+  - Old local file paths were migrated to Cloudinary-compatible URLs.  
+  - New flowers fetch seamlessly with no placeholder issues.  
+
+###  Developer Notes
+- Environment variables (stored in `.env`):  
+  ```env
+  CLOUD_NAME=your_cloud_name
+  CLOUD_KEY=your_api_key
+  CLOUD_SECRET=your_api_secret
+
+
+
 ## Presentation Link(Loom Video) Milestone 1
 [[Presentation Link](https://www.loom.com/share/01d3878d146f48498fc133eb910dd095?sid=70aa91f3-b4e5-452a-b78b-46056c6b2a0b)]
 
 ## Presentation Link(Loom Video) Milestone 2
 [[Presentation Link](https://www.loom.com/share/69083b5e6a0140b2baeab91725fa6da4?sid=74ad1d57-125d-4e68-b64d-188528542952)]
+
+## Presentation Link(Loom Video) Milestone 3
+[[Presentation Link]()]
+
 
 ## Live Demo(on Render.com)
 [[live_demo](https://flower-delivery-website-af2b.onrender.com)]
