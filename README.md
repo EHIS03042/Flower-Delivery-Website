@@ -200,11 +200,11 @@ This milestone focuses on improving the Admin Panel and image handling pipeline.
 [[Presentation Link](https://www.loom.com/share/69083b5e6a0140b2baeab91725fa6da4?sid=74ad1d57-125d-4e68-b64d-188528542952)]
 
 ## Presentation Link(Loom Video) Milestone 3
-[[Presentation Link]()]
+[[Presentation Link](https://www.loom.com/share/153767ff93c94e8d8cc39eafb60067d0?sid=d860d43d-271e-4e5b-80ed-4943308fb98e)]
 
 
 ## Live Demo(on Render.com)
-[[live_demo](https://flower-delivery-website-af2b.onrender.com)]
+[[live_demo](https://flower-delivery-website-frontend-admin.onrender.com)]
 
 ## Author Details
 Name: [Tolulope McSmith - EHIS03042]
