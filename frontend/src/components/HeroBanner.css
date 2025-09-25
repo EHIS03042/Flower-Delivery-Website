@@ -1,0 +1,4 @@
+.hero { min-height:60vh; background:url('/hero.jpg') center/cover no-repeat, #f7faf9; display:flex; align-items:center; justify-content:center; text-align:center; border-radius:12px; }
+.hero__content { padding:40px 20px; }
+.hero__content h1 { font-size:40px; margin:0 0 8px; }
+.hero__content p { color:#555; margin:0 0 16px; }
