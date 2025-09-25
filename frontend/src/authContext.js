@@ -1,7 +1,7 @@
         // // src/authContext.js
         // import React, { createContext, useState, useContext, useEffect } from "react";
 
-        // const AuthContext = createContext();
+        // const authContext = createContext();
 
         // export const AuthProvider = ({ children }) => {
         // const [user, setUser] = useState(null);
@@ -25,9 +25,9 @@
         // };
 
         // return (
-        //     <AuthContext.Provider value={{ user, login, logout }}>
+        //     <authContext.Provider value={{ user, login, logout }}>
         //     {children}
-        //     </AuthContext.Provider>
+        //     </authContext.Provider>
         // );
         // };
 
@@ -37,7 +37,7 @@
         // ReCode1
         import React, { createContext, useState, useEffect } from "react";
 
-    export const AuthContext = createContext();
+    export const authContext = createContext();
 
     const TOKEN_KEY = "fdw_jwt";
 
@@ -64,8 +64,8 @@
     }, [token]);
 
     return (
-        <AuthContext.Provider value={{ token, user, login, logout, showAuth, setShowAuth }}>
+        <authContext.Provider value={{ token, user, login, logout, showAuth, setShowAuth }}>
         {children}
-        </AuthContext.Provider>
+        </authContext.Provider>
     );
     };
