@@ -16,4 +16,4 @@ root.render(
   </React.StrictMode>
 );
 
-// Optional: performance reporting (can remove if not needed)
+
