@@ -1,4 +1,132 @@
-.hero { min-height:60vh; background:url('/hero.jpg') center/cover no-repeat, #f7faf9; display:flex; align-items:center; justify-content:center; text-align:center; border-radius:12px; }
-.hero__content { padding:40px 20px; }
-.hero__content h1 { font-size:40px; margin:0 0 8px; }
-.hero__content p { color:#555; margin:0 0 16px; }
+    /* === Base Hero Section === */
+    .hero {
+    background: #fff;
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column; /* Top hero content remains stacked */
+    align-items: center;
+    }
+
+    /* === Title and tagline === */
+    .hero__content {
+    text-align: left;
+    width: 100%;
+    max-width: 1100px;
+    margin: 1rem auto 5rem;
+    }
+
+    .hero__title {
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    }
+
+    .hero__brand {
+    font-weight: 700;
+    font-size: 4.8rem;
+    }
+
+    .hero__subtitle {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    }
+
+    .hero__subtitle em {
+    font-style: italic;
+    }
+
+    /* === Secondary section (Image + Text side-by-side) === */
+    .hero__image-section {
+    display: flex;
+    flex-direction: row; /* ✅ Always horizontal */
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    }
+
+    .hero__image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    }
+
+    .hero__image {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 4px;
+    object-fit: cover;
+    }
+
+    .hero__divider {
+    width: 1px;
+    background: #222;
+    height: 80%;
+    min-height: 200px;
+    }
+
+    .hero__description {
+    flex: 1;
+    font-size: 1.25rem;
+    color: #333;
+    line-height: 1.8;
+    font-weight: 400;
+    max-width: 420px;
+    text-align: left;
+    }
+
+    .hero__description p {
+    margin: 0;
+    }
+
+    /* 📱 Responsive — stay horizontal but scale */
+    @media (max-width: 768px) {
+    .hero__image-section {
+        flex-direction: row; /* ✅ Keep horizontal */
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .hero__image {
+        max-width: 50%; /* Shrink image */
+    }
+
+    .hero__description {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 50%;
+    }
+
+    .hero__divider {
+        height: 120px;
+    }
+
+    .hero__title {
+        font-size: 2.8rem;
+    }
+
+    .hero__brand {
+        font-size: 3rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.2rem;
+    }
+    }
+
+    /* 📱 Ultra-small phones */
+    @media (max-width: 480px) {
+    .hero__image {
+        max-width: 95%;
+    }
+    .hero__description {
+        font-size: 0.95rem;
+        max-width: 50%;
+    }
+    }

@@ -1,3 +1,129 @@
-.tGrid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); }
-.tCard { border:1px solid #eee; border-radius:10px; background:#fff; padding:16px; }
-.tCard span { color:#666; font-size:14px; }
+    /* === Testimonials Section === */
+    .testimonials {
+    background: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+    }
+
+    .testimonials__container {
+    max-width: 600px;
+    margin: 0 auto;
+    }
+
+    .testimonials__label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    }
+
+    .testimonials__logo {
+    width: 90px;
+    margin-bottom: 0.4rem;
+    }
+
+    .testimonials__subtitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #777;
+    font-weight: 500;
+    }
+
+    /* === Heading === */
+    .testimonials__heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0 2rem;
+    color: #111;
+    }
+
+    /* === Quote === */
+    .testimonials__quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 auto 1.5rem;
+    max-width: 520px;
+    }
+
+    /* === Author === */
+    .testimonials__author {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 2rem;
+    }
+
+    /* === Carousel Dots === */
+    .testimonials__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    }
+
+    .dot {
+    width: 8px;
+    height: 8px;
+    background: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    }
+
+    .dot.active {
+    background: #111;
+    }
+
+    /* === CTA Button === */
+    .testimonials__button {
+    padding: 0.9rem 2rem;
+    border: 1px solid #111;
+    background: transparent;
+    color: #111;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    }
+
+    .testimonials__button:hover {
+    background: #111;
+    color: #fff;
+    }
+
+    /* === Responsive Design === */
+    @media (max-width: 768px) {
+    .testimonials {
+        padding: 4rem 1.5rem;
+    }
+
+    .testimonials__heading {
+        font-size: 1.8rem;
+    }
+
+    .testimonials__quote {
+        font-size: 1.1rem;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .testimonials {
+        padding: 3rem 1.2rem;
+    }
+
+    .testimonials__heading {
+        font-size: 1.6rem;
+    }
+
+    .testimonials__quote {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .testimonials__button {
+        width: 100%;
+    }
+    }
