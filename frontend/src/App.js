@@ -23,6 +23,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
 
           {/* Categories */}
+          <Route path="/category" element={<CategoryPage />} />
+
           <Route path="/category/:slug" element={<CategoryPage />} />
 
           {/* ✅ Product pages (generic & dynamic) */}

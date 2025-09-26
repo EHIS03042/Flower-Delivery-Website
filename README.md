@@ -191,7 +191,8 @@ This milestone focuses on improving the Admin Panel and image handling pipeline.
   CLOUD_KEY=your_api_key
   CLOUD_SECRET=your_api_secret
 
-
+## Milestone 4
+In Milestone 4, the frontend of the Flower Delivery Web App was fully developed based on the provided Figma design. Key pages — Home, Category, Product, About Us, and Checkout (Step 1) — were implemented with responsive layouts and adaptive navigation. User authentication was integrated, allowing cart access only for signed-in users, with JWT tokens managing session state. A sign-in/sign-up modal was created using email and password fields, while Google OAuth and password reset features were intentionally excluded.
 
 ## Presentation Link(Loom Video) Milestone 1
 [[Presentation Link](https://www.loom.com/share/01d3878d146f48498fc133eb910dd095?sid=70aa91f3-b4e5-452a-b78b-46056c6b2a0b)]
@@ -202,6 +203,8 @@ This milestone focuses on improving the Admin Panel and image handling pipeline.
 ## Presentation Link(Loom Video) Milestone 3
 [[Presentation Link](https://www.loom.com/share/153767ff93c94e8d8cc39eafb60067d0?sid=d860d43d-271e-4e5b-80ed-4943308fb98e)]
 
+## Presentation Link(Loom Video) Milestone 4
+[[Presentation Link](https://www.loom.com/share/847c6986ce4f4c8b9f535b1d34574230?sid=8fb34ac2-aada-48af-9cc9-88c9eb604d76)
 
 ## Live Demo(on Render.com)
 [[live_demo](https://flower-delivery-website-frontend-admin.onrender.com)]
