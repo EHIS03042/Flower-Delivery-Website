@@ -3,8 +3,10 @@
     const mongoose = require("mongoose");
     const cors = require("cors");
     require("dotenv").config();
+    const Stripe = require("stripe");
 
     const app = express();
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
     // ----- Middleware
     app.use(cors());
@@ -16,6 +18,44 @@
 
     app.use("/api/users", userRoutes);
     app.use("/api/flowers", flowerRoutes);
+
+    // ✅ Stripe Checkout Route
+    app.post("/api/create-checkout-session", async (req, res) => {
+    try {
+        const { items } = req.body;
+
+        if (!items || !Array.isArray(items)) {
+        return res.status(400).json({ error: "Invalid cart items" });
+        }
+
+        const lineItems = items.map((item) => ({
+        price_data: {
+            currency: "usd",
+            product_data: {
+            name: item.name,
+            images: item.image ? [item.image] : [],
+            },
+            unit_amount: item.price * 100, // ✅ convert dollars to cents
+        },
+        quantity: item.quantity || 1,
+        }));
+
+        const session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        mode: "payment",
+        line_items: lineItems,
+
+        // ✅ Success & cancel URLs come from .env (recommended)
+        success_url: `${process.env.CLIENT_URL}/?payment=success`,
+        cancel_url: `${process.env.CLIENT_URL}/checkout?payment=failed`,
+        });
+
+        res.json({ url: session.url });
+    } catch (error) {
+        console.error("❌ Stripe Checkout Error:", error.message);
+        res.status(500).json({ error: error.message });
+    }
+    });
 
     // ----- MongoDB connection
     const MONGO_URI = process.env.MONGO_URI;
