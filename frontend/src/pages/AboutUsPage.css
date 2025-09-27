@@ -1,0 +1,179 @@
+    /* ------------------------------
+    ABOUT US PAGE STYLES
+    ------------------------------- */
+    .aboutus {
+    width: 100%;
+    background: #fff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #222;
+    }
+
+    /* ===== HERO ===== */
+    .aboutus-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    border-bottom: 1px solid #ddd;
+    }
+
+    .aboutus-heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+    }
+
+    .aboutus-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+    }
+
+    .aboutus-subtitle {
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+    color: #555;
+    }
+
+    .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+    }
+
+    .social-icons a {
+    color: #333;
+    transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+    color: #ff3c78;
+    }
+
+    /* ===== SECTION LAYOUT ===== */
+    .aboutus-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+
+    .aboutus-section.reverse {
+    flex-direction: row-reverse;
+    }
+
+    .aboutus-img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    }
+
+    .aboutus-text {
+    width: 50%;
+    }
+
+    .aboutus-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    }
+
+    .aboutus-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .aboutus-cta {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: #f8f8f8;
+    }
+
+    .aboutus-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    }
+
+    .aboutus-cta p {
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    color: #555;
+    }
+
+    .cta-btn {
+    background: #000;
+    color: #fff;
+    padding: 0.9rem 2.5rem;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+    background: #444;
+    }
+
+    /* ------------------------------
+    RESPONSIVE DESIGN
+    ------------------------------- */
+    @media (max-width: 1024px) {
+    .aboutus-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .aboutus-section.reverse {
+        flex-direction: column;
+    }
+
+    .aboutus-img,
+    .aboutus-text {
+        width: 100%;
+    }
+
+    .aboutus-img {
+        max-height: 400px;
+    }
+    }
+
+    @media (max-width: 768px) {
+    .aboutus-title {
+        font-size: 2rem;
+    }
+
+    .aboutus-text h3 {
+        font-size: 1.6rem;
+    }
+
+    .aboutus-text p {
+        font-size: 1rem;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .aboutus-heading {
+        font-size: 1.3rem;
+    }
+
+    .aboutus-title {
+        font-size: 1.8rem;
+    }
+
+    .aboutus-subtitle {
+        font-size: 1rem;
+    }
+    }

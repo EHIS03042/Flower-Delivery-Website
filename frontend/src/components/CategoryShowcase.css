@@ -1,0 +1,117 @@
+    /* === Section Container === */
+    .category-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    }
+
+    .category-section__title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 4rem 0 3rem;
+    }
+
+    /* === Category Grid === */
+    .category-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    }
+
+    /* === Category Row === */
+    .category-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 50vh;
+    min-height: 400px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    }
+
+    .category-row.reverse {
+    direction: rtl; /* ✅ flip DOM flow */
+    }
+
+    .category-row.reverse .category-text,
+    .category-row.reverse .category-image {
+    direction: ltr; /* ✅ reset content direction */
+    }
+
+    /* === Text Column === */
+    .category-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem;
+    background: #fff;
+    }
+
+    .category-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    }
+
+    .category-link {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #000;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.3s ease;
+    }
+
+    .category-link:hover {
+    transform: translateX(8px);
+    }
+
+    /* === Image Column === */
+    .category-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    }
+
+    .category-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+    .category-row {
+        grid-template-columns: 1fr 1fr; /* ✅ still 2-column horizontally */
+        height: 40vh;
+        min-height: 320px;
+    }
+
+    .category-text {
+        padding: 2rem;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+    }
+
+    .category-link {
+        font-size: 1rem;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .category-row {
+        height: 35vh;
+        min-height: 260px;
+    }
+    }

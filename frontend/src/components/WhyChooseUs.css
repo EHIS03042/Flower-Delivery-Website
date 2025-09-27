@@ -1,0 +1,69 @@
+    /* === Base Section === */
+    .whychoose {
+    padding: 6rem 2rem;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    }
+
+    .whychoose__container {
+    max-width: 800px;
+    margin: 0 auto;
+    }
+
+    .whychoose__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+    }
+
+    /* === Card Layout === */
+    .whychoose__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    }
+
+    .whychoose__card {
+    border: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+    padding: 2rem 0;
+    }
+
+    .whychoose__card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #111;
+    }
+
+    .whychoose__card-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    max-width: 700px;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+    .whychoose {
+        padding: 4rem 1.5rem;
+    }
+
+    .whychoose__title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .whychoose__card-title {
+        font-size: 1.25rem;
+    }
+
+    .whychoose__card-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    }

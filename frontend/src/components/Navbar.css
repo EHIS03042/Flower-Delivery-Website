@@ -1,0 +1,120 @@
+    /* src/components/NavBar.css */
+
+    .navbar {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+
+    .navbar__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 24px;
+    }
+
+    /* Hamburger */
+    .navbar__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 20px;
+    cursor: pointer;
+    }
+
+    .navbar__toggle .bar {
+    height: 3px;
+    width: 100%;
+    background: #000;
+    border-radius: 2px;
+    transition: 0.3s;
+    }
+
+    /* Center */
+    .navbar__center {
+    flex: 1;
+    text-align: center;
+    }
+
+    .navbar__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    }
+
+    /* Right */
+    .navbar__right {
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar__cart {
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    }
+
+    .navbar__cart:hover {
+    opacity: 0.7;
+    }
+
+    /* Slide-Out Menu */
+    .navbar__menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    list-style: none;
+    transition: left 0.3s ease;
+    z-index: 999;
+    }
+
+    .navbar__menu.open {
+    left: 0;
+    }
+
+    .navbar__menu li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #222;
+    }
+
+    .navbar__auth button {
+    padding: 10px 18px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (min-width: 769px) {
+    .navbar__menu {
+        position: static;
+        flex-direction: row;
+        height: auto;
+        box-shadow: none;
+        padding: 0;
+        gap: 32px;
+        background: none;
+        display: flex;
+    }
+
+    .navbar__toggle {
+        display: none;
+    }
+    }
