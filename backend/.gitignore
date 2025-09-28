@@ -4,7 +4,7 @@ backend/node_modules/
 
 # Environment variables
 .env
-backend/.env
+backend/.env/
 
 # Dependency directories from other package managers
 jspm_packages/
