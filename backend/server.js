@@ -17,6 +17,8 @@
     // ----- Routes
     const userRoutes = require("./routes/userRoutes");
     const flowerRoutes = require("./routes/flowerRoutes");
+    const paymentRoutes = require("./routes/paymentRoutes"); 
+
 
     app.use("/api/users", userRoutes);
     app.use("/api/flowers", flowerRoutes);
