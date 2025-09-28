@@ -214,7 +214,7 @@ This ensures a smooth, reliable checkout experience and completes the full-stack
 
 
 ## Presentation Link(Loom Video) Milestone 5
-[[Presentation Link]()
+[[Presentation Link](https://www.loom.com/share/48c2dc39606f46b28b679b9b678aa021?sid=c51b2242-9a5c-4003-9365-af65966a9aa7)
 
 
 ## Live Demo(on Render.com)[Milestone 3]
@@ -224,7 +224,7 @@ This ensures a smooth, reliable checkout experience and completes the full-stack
 [[live_demo](https://flower-delivery-website-frontend-main.onrender.com)]
 
 ## Live Demo(on Render.com)[Milestone 5]
-[[live_demo]()]
+[[live_demo](https://flower-delivery-website-full-stack.onrender.com)]
 
 
 ## Author Details
