@@ -8,7 +8,7 @@
     createFlower,
     updateFlower,
     deleteFlower,
-  } = require("../controllers/flowerController"); // ✅ make sure "controllers" is plural
+  } = require("../controller/flowerController"); // ✅ make sure "controllers" is plural
 
   const upload = require("../middleware/upload"); // ✅ directly import the multer instance
 
