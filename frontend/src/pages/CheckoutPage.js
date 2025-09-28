@@ -315,11 +315,13 @@
     // ✅ Stripe checkout handler
     const handleCheckout = async () => {
         try {
+        console.log("✅ API URL:", process.env.REACT_APP_API_URL); // Optional: check value
         const { data } = await axios.post(
-            "http://localhost:3001/api/create-checkout-session", // ⚠️ Change to your backend URL when deployed
-            { items: cartItems }
+        `${process.env.REACT_APP_API_URL}/api/payment/create-checkout-session`,
+        { items: cartItems }
         );
 
+        
         if (data?.url) {
             window.location.href = data.url; // ✅ Redirect to Stripe checkout
         } else {

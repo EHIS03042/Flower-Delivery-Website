@@ -4,6 +4,8 @@
     const cors = require("cors");
     require("dotenv").config();
     const Stripe = require("stripe");
+    const paymentRoutes = require("./routes/paymentRoutes");
+
 
     const app = express();
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
@@ -18,9 +20,11 @@
 
     app.use("/api/users", userRoutes);
     app.use("/api/flowers", flowerRoutes);
+    app.use("/api/payment", paymentRoutes);
+
 
     // ✅ Stripe Checkout Route
-    app.post("/api/create-checkout-session", async (req, res) => {
+    app.post("/api/payment/create-checkout-session", async (req, res) => {
     try {
         const { items } = req.body;
 
