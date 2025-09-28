@@ -194,6 +194,15 @@ This milestone focuses on improving the Admin Panel and image handling pipeline.
 ## Milestone 4
 In Milestone 4, the frontend of the Flower Delivery Web App was fully developed based on the provided Figma design. Key pages — Home, Category, Product, About Us, and Checkout (Step 1) — were implemented with responsive layouts and adaptive navigation. User authentication was integrated, allowing cart access only for signed-in users, with JWT tokens managing session state. A sign-in/sign-up modal was created using email and password fields, while Google OAuth and password reset features were intentionally excluded.
 
+## Milestone 5(Full Stack)
+Milestone 5 implements full-stack shipping details capture and secure payment processing using Stripe.
+Users provide shipping information and proceed to payment through the integrated gateway.
+On successful payment, they are redirected to the Home Page and their cart is emptied.
+On failed payment, they are redirected back to the Cart Page with all previous items preserved.
+All core backend and frontend components work together to support this payment workflow.
+This ensures a smooth, reliable checkout experience and completes the full-stack functionality.
+
+
 ## Presentation Link(Loom Video) Milestone 1
 [[Presentation Link](https://www.loom.com/share/01d3878d146f48498fc133eb910dd095?sid=70aa91f3-b4e5-452a-b78b-46056c6b2a0b)]
 
@@ -203,14 +212,20 @@ In Milestone 4, the frontend of the Flower Delivery Web App was fully developed 
 ## Presentation Link(Loom Video) Milestone 3
 [[Presentation Link](https://www.loom.com/share/153767ff93c94e8d8cc39eafb60067d0?sid=d860d43d-271e-4e5b-80ed-4943308fb98e)]
 
-## Presentation Link(Loom Video) Milestone 4
-[[Presentation Link](https://www.loom.com/share/847c6986ce4f4c8b9f535b1d34574230?sid=8fb34ac2-aada-48af-9cc9-88c9eb604d76)
+
+## Presentation Link(Loom Video) Milestone 5
+[[Presentation Link]()
+
 
 ## Live Demo(on Render.com)[Milestone 3]
 [[live_demo](https://flower-delivery-website-frontend-admin.onrender.com)]
 
 ## Live Demo(on Render.com)[Milestone 4]
 [[live_demo](https://flower-delivery-website-frontend-main.onrender.com)]
+
+## Live Demo(on Render.com)[Milestone 5]
+[[live_demo]()]
+
 
 ## Author Details
 Name: [Tolulope McSmith - EHIS03042]
