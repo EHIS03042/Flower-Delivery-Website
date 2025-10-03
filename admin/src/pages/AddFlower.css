@@ -1,152 +1,130 @@
-/* Styling for AddFlower */
-    /* .add-flower-container {
-    max-width: 400px;
-    margin: auto;
-    }
-
-    .add-flower-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    }
-
-    .add-flower-form input,
-    .add-flower-form textarea {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    }
-
-    .submit-btn {
-    padding: 8px 15px;
-    background: darkgreen;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    }
-
-    .submit-btn:hover {
-    background: seagreen;
-    } */
-
-    /* Re-Style 1 */
-    /* .add-flower-container {
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    background-color: #fafafa;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    /* ===== AddFlower Page Styles ===== */
+    .add-flower-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
     }
 
     .add-flower-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 2.2rem;
+    color: #006400;
+    font-weight: 700;
+    margin-bottom: 2rem;
     }
 
     .add-flower-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1.2rem;
     }
 
     .add-flower-form input,
-    .add-flower-form textarea {
-    padding: 10px;
+    .add-flower-form textarea,
+    .add-flower-form select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s ease-in-out;
+    border-radius: 10px;
+    transition: border-color 0.3s;
     }
 
     .add-flower-form input:focus,
-    .add-flower-form textarea:focus {
-    border-color: #4caf50;
-    }
-
-    .add-flower-form button {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background-color: #4caf50;
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    }
-
-    .add-flower-form button:hover {
-    background-color: #45a049;
-    }
-
-    .success-message {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #e7f9ed;
-    color: #2d7a34;
-    border: 1px solid #b6e0bb;
-    border-radius: 8px;
-    text-align: center;
-    } */
-
-    /* Restyle 2 */
-    .add-flower-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    }
-
-    .add-flower-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    }
-
-    .add-flower-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    }
-
-    .add-flower-form input,
-    .add-flower-form textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+    .add-flower-form textarea:focus,
+    .add-flower-form select:focus {
+    border-color: #006400;
+    outline: none;
     }
 
     .add-flower-form textarea {
-    min-height: 80px;
+    min-height: 120px;
     resize: vertical;
     }
 
     .add-flower-form button {
-    padding: 12px;
+    background: #006400;
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    background-color: #4caf50;
-    color: white;
-    font-weight: bold;
+    padding: 0.9rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s ease-in-out;
+    transition: background 0.3s;
     }
 
     .add-flower-form button:hover {
-    background-color: #45a049;
+    background: #004d00;
     }
 
     .image-preview {
-    margin-top: 20px;
+    margin-top: 2rem;
     text-align: center;
     }
 
+    .image-preview h4 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    }
+
     .image-preview img {
-    width: 200px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
+    max-width: 250px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+    .add-flower-container {
+        padding: 1.5rem;
+        margin: 2rem 1rem;
+    }
+
+    .add-flower-container h2 {
+        font-size: 1.8rem;
+    }
+    }
+
+    /* ===== Admin Nav Bar ===== */
+.admin-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #006400;
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    }
+
+    .admin-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #ccc;
+    }
+
+    .admin-nav a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e40af;
+    transition: color 0.3s, border-color 0.3s;
+    padding: 0.3rem 0.6rem;
+    }
+
+    .admin-nav a:hover {
+    color: #006400;
+    border-bottom: 2px solid #006400;
+    }
+
+    .admin-nav a.active {
+    color: #006400;
+    border-bottom: 2px solid #006400;
+    }

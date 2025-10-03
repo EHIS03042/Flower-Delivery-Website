@@ -1,7 +1,7 @@
     import React from "react";
     import HeroBanner from "../components/HeroBanner";
     import CategoryShowcase from "../components/CategoryShowcase";
-    import AboutUsPage from "../pages/AboutUsPage";
+    import About from "../components/About";
     import WhyChooseUs from "../components/WhyChooseUs";
     import FollowUs from "../components/FollowUs";
     import ContactUs from "../components/ContactUs";
@@ -14,7 +14,7 @@
         <>
         <HeroBanner />
         <CategoryShowcase />
-        <AboutUsPage /> 
+        <About /> 
         <WhyChooseUs />
         <FollowUs />
         <ContactUs />

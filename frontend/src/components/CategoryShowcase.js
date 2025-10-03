@@ -1,7 +1,7 @@
-    // src/components/CategoryShowcase.js
+    // ✅ src/components/CategoryShowcase.js
     import React from "react";
-    import "./CategoryShowcase.css";
     import { Link } from "react-router-dom";
+    import "./CategoryShowcase.css";
 
     const categories = [
     {
@@ -37,20 +37,18 @@
         <div className="category-grid">
             {categories.map((cat, index) => (
             <div
-                className={`category-row ${
-                index % 2 !== 0 ? "reverse" : ""
-                }`}
+                className={`category-row ${index % 2 !== 0 ? "reverse" : ""}`}
                 key={cat.slug}
             >
-                {/* Text column */}
+                {/* ✅ Text column */}
                 <div className="category-text">
                 <h3 className="category-title">{cat.title}</h3>
                 <Link to={`/category/${cat.slug}`} className="category-link">
-                    Shop now →
+                    Shop now <span className="arrow">→</span>
                 </Link>
                 </div>
 
-                {/* Image column */}
+                {/* ✅ Image column */}
                 <div className="category-image">
                 <img
                     src={cat.img}

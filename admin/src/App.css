@@ -1,0 +1,100 @@
+    /* ====== Global Reset ====== */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafb;
+    color: #1f2937;
+    min-height: 100vh;
+    }
+
+    /* ====== App Container ====== */
+    .app-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    }
+
+    /* ====== Typography ====== */
+    h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    color: #064e3b;
+    }
+
+    /* ====== Toast Styling ====== */
+    .Toastify__toast {
+    font-size: 0.95rem;
+    border-radius: 8px;
+    }
+
+    /* ====== Fallback Page (404) ====== */
+    h2 {
+    text-align: center;
+    margin-top: 3rem;
+    color: #dc2626;
+    }
+
+    /* ====== Buttons (Global) ====== */
+    button {
+    cursor: pointer;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+    opacity: 0.9;
+    }
+
+    button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    }
+
+    /* ====== Utility Classes ====== */
+    .text-center {
+    text-align: center;
+    }
+
+    .mt-2 {
+    margin-top: 2rem;
+    }
+
+    .mb-2 {
+    margin-bottom: 2rem;
+    }
+
+    .hidden {
+    display: none !important;
+    }
+
+    /* ====== Responsive Layout ====== */
+    @media (max-width: 1024px) {
+    .app-container {
+        padding: 1.5rem;
+    }
+    }
+
+    @media (max-width: 768px) {
+    .app-container {
+        padding: 1rem;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .app-container {
+        padding: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+    }

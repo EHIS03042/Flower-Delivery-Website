@@ -1,4 +1,3 @@
-    // admin/src/pages/Flowers.js
     import React, { useEffect, useState } from "react";
     import axios from "axios";
     import { toast } from "react-toastify";
@@ -10,8 +9,7 @@
     const [loading, setLoading] = useState(true);
     const [imageLoading, setImageLoading] = useState({});
 
-    // ✅ Base API from .env
-    const API_BASE = process.env.REACT_APP_API_URL;
+    const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
     useEffect(() => {
         const fetchFlowers = async () => {
@@ -20,13 +18,12 @@
             const items = Array.isArray(res.data) ? res.data : [];
             setFlowers(items);
 
-            // initialize spinner state for each flower
             const init = {};
             items.forEach((f) => (init[f._id] = true));
             setImageLoading(init);
         } catch (err) {
-            console.error("Error fetching flowers:", err);
-            toast.error("Failed to load flowers.");
+            console.error("❌ Error fetching flowers:", err);
+            toast.error("Failed to load flowers. Please check your API connection.");
         } finally {
             setLoading(false);
         }
@@ -39,28 +36,40 @@
         if (!window.confirm("Are you sure you want to delete this flower?")) return;
         try {
         await axios.delete(`${API_BASE}/api/flowers/${id}`);
-        toast.success("Flower deleted successfully");
+        toast.success("🌸 Flower deleted successfully.");
         setFlowers((prev) => prev.filter((f) => f._id !== id));
         } catch (err) {
-        console.error("Error deleting flower:", err);
-        toast.error("Failed to delete flower.");
+        console.error("❌ Error deleting flower:", err);
+        toast.error("Failed to delete flower. Try again.");
         }
     };
 
-    if (loading) return <p>Loading flowers...</p>;
-
     return (
         <div className="flowers-container">
+        <h1 className="admin-title">Admin Panel</h1>
+
+        {/* ✅ Inline navigation bar */}
+        
+        <nav className="admin-nav">
+        <a href="/flowers">Flowers</a>
+        <a href="/add-flower">Add Flowers</a>
+        </nav>
+
+
         <h2 className="admin-header">🌸 Admin: Manage Flowers</h2>
 
-        <div className="flowers-list">
-            {flowers.length === 0 ? (
-            <p>No flowers available.</p>
-            ) : (
-            flowers.map((flower) => {
-                const original = flower.image;
-                const optimizedUrl = toOptimizedCloudinary(original);
-                const srcSet = buildSrcSet(original);
+        {loading ? (
+            <p className="loading-text">Loading flowers, please wait...</p>
+        ) : flowers.length === 0 ? (
+            <div className="empty-state">
+            <p>No flowers available yet.</p>
+            <p>Start by adding a new flower from the “Add Flowers” tab.</p>
+            </div>
+        ) : (
+            <div className="flowers-list">
+            {flowers.map((flower) => {
+                const optimizedUrl = toOptimizedCloudinary(flower.image);
+                const srcSet = buildSrcSet(flower.image);
 
                 return (
                 <div className="flower-card" key={flower._id}>
@@ -105,10 +114,12 @@
 
                     <div className="flower-details">
                     <h3>{flower.name?.replaceAll('"', "") || "Untitled"}</h3>
-                    <p>{flower.description?.replaceAll('"', "") || ""}</p>
+                    <p className="flower-description">
+                        {flower.description?.replaceAll('"', "") || "No description"}
+                    </p>
                     <p>
                         <span className="label">Category:</span>{" "}
-                        {flower.category?.replaceAll('"', "") || ""}
+                        {flower.category?.replaceAll('"', "") || "Uncategorized"}
                     </p>
                     <p>
                         <span className="label">Price:</span> $
@@ -124,9 +135,9 @@
                     </div>
                 </div>
                 );
-            })
-            )}
-        </div>
+            })}
+            </div>
+        )}
         </div>
     );
     }
