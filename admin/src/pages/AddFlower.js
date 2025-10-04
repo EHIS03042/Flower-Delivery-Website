@@ -2,8 +2,8 @@
     import React, { useState } from "react";
     import axios from "axios";
     import { toast } from "react-toastify";
-    import { useNavigate } from "react-router-dom"; // ✅ for redirect
-    import "./AddFlower.css"; // external stylesheet
+    import { useNavigate } from "react-router-dom";
+    import "./AddFlower.css";
 
     function AddFlower() {
     const navigate = useNavigate();
@@ -18,6 +18,17 @@
 
     const [preview, setPreview] = useState(null);
     const [loading, setLoading] = useState(false);
+
+    // ✅ Define categories with slug + label
+    const categories = [
+        { slug: "fresh-flowers", label: "Fresh Flowers" },
+        { slug: "dried-flowers", label: "Dried Flowers" },
+        { slug: "live-plants", label: "Live Plants" },
+        { slug: "aroma-candles", label: "Aroma Candles" },
+        { slug: "fresheners", label: "Fresheners" },
+        { slug: "bouquets", label: "Bouquets" },
+        { slug: "luxury-arrangements", label: "Luxury Arrangements" },
+    ];
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -44,17 +55,13 @@
         data.append("image", formData.image);
 
         const res = await axios.post(
-            "https://flower-delivery-website-af2b.onrender.com/api/flowers",
+            `${process.env.REACT_APP_API_URL || "http://localhost:3001"}/api/flowers`,
             data,
             { headers: { "Content-Type": "multipart/form-data" } }
         );
 
-        toast.success("Flower added successfully!");
-
-        // ✅ Switch preview to Cloudinary-hosted image
-        if (res.data.image) {
-            setPreview(res.data.image);
-        }
+        toast.success("🌸 Flower added successfully!");
+        if (res.data.image) setPreview(res.data.image);
 
         // ✅ Reset form
         setFormData({
@@ -65,11 +72,10 @@
             image: null,
         });
 
-        // ✅ Redirect back to flower list
         navigate("/flowers");
         } catch (err) {
         console.error(err);
-        toast.error("Failed to add flower.");
+        toast.error("❌ Failed to add flower.");
         } finally {
         setLoading(false);
         }
@@ -77,6 +83,14 @@
 
     return (
         <div className="add-flower-container">
+        <h1 className="admin-title">Admin Panel</h1>
+
+        {/* ✅ Inline navigation bar */}
+        <nav className="admin-nav">
+            <a href="/flowers">Flowers</a>
+            <a href="/add-flower">Add Flowers</a>
+        </nav>
+
         <h2>Add New Flower</h2>
 
         <form
@@ -110,16 +124,22 @@
             required
             />
 
-            <input
-            type="text"
+            {/* ✅ Slug-based category dropdown */}
+            <select
             name="category"
-            placeholder="Category"
             value={formData.category}
             onChange={handleChange}
             required
-            />
+            >
+            <option value="">-- Select Category --</option>
+            {categories.map((cat) => (
+                <option key={cat.slug} value={cat.slug}>
+                {cat.label}
+                </option>
+            ))}
+            </select>
 
-            <input type="file" name="image" onChange={handleImageChange} />
+            <input type="file" name="image" onChange={handleImageChange} required />
 
             <button type="submit" disabled={loading}>
             {loading ? "Saving..." : "Save Flower"}

@@ -4,7 +4,9 @@
     //  - Works with any incoming Cloudinary secure_url that contains /image/upload/
     //  - Leaves non-Cloudinary URLs unchanged (falls back)
 
-    const DEFAULT_TRANSFORMS = "w_400,h_400,c_fill,q_auto,f_auto,dpr_auto,g_auto";
+    //  Added `fl_progressive` to enable progressive image loading
+    const DEFAULT_TRANSFORMS = "w_400,h_400,c_fill,q_auto,f_auto,dpr_auto,g_auto,fl_progressive";
+
 
     export function toOptimizedCloudinary(src, transforms = DEFAULT_TRANSFORMS) {
     if (!src || typeof src !== "string") return src;
