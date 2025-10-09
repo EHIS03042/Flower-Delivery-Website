@@ -1,9 +1,244 @@
-.modal__backdrop { position:fixed; inset:0; background:rgba(0,0,0,.45); display:flex; align-items:center; justify-content:center; padding:16px; z-index:40; }
-.modal { background:#fff; width:100%; max-width:420px; border-radius:10px; padding:20px 20px 16px; position:relative; }
-.modal__close { position:absolute; top:10px; right:10px; border:0; background:#f5f5f5; border-radius:6px; width:32px; height:32px; cursor:pointer; }
-.modal__title { margin:4px 0 12px; font-size:20px; font-weight:700; }
-.modal__form { display:grid; gap:12px; }
-.modal__form label { display:grid; gap:6px; font-size:14px; }
-.modal__form input { border:1px solid #ddd; border-radius:8px; padding:10px; }
-.modal__error { background:#ffe9ec; color:#a4002a; border:1px solid #f7c2cd; padding:8px 10px; border-radius:8px; font-size:14px; }
-.link { color:#1E6F5C; background:none; border:0; cursor:pointer; }
+    /* ===== Modal Overlay (Background) ===== */
+    .modal__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 1rem;
+    overflow-y: auto;
+    }
+
+    /* ===== Modal Container ===== */
+    .modal {
+    background: #fff;
+    border-radius: 14px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.25);
+    position: relative;
+    animation: fadeIn 0.35s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    }
+
+    /* Close button (top-right) */
+    .modal__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s ease;
+    }
+
+    .modal__close:hover {
+    color: #222;
+    }
+
+    /* ===== Modal Title ===== */
+    .modal__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.8rem;
+    text-align: center;
+    color: #222;
+    }
+
+    /* ===== Form Styling ===== */
+    .modal__form {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .modal__form label {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #444;
+    }
+
+    .modal__form input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-top: 0.4rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .modal__form input:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.25);
+    }
+
+    /* ===== Primary Button ===== */
+    .btn--primary {
+    width: 100%;
+    background: #4caf50;
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn--primary:hover {
+    background: #43a047;
+    transform: translateY(-1px);
+    }
+
+    .btn--primary:disabled {
+    background: #a5d6a7;
+    cursor: not-allowed;
+    }
+
+    /* ===== Error Message ===== */
+    .modal__error {
+    color: #d32f2f;
+    background: #fdecea;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 0.6rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+    }
+
+    /* ===== Switch Section (Sign Up / Sign In) ===== */
+    .modal__switch {
+    text-align: center;
+    margin-top: 1.4rem;
+    font-size: 1rem;
+    color: #333;
+    }
+
+    .modal__switch .link {
+    background: none;
+    border: none;
+    color: #4caf50;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-left: 0.3rem;
+    transition: color 0.2s ease;
+    }
+
+    .modal__switch .link:hover {
+    color: #388e3c;
+    text-decoration: underline;
+    }
+
+    /* ===== Responsive Layouts ===== */
+
+    /* 📱 Small Devices (Mobile) */
+    @media (max-width: 480px) {
+    .modal {
+        max-width: 95%;
+        padding: 1.8rem 1.4rem;
+    }
+
+    .modal__title {
+        font-size: 1.7rem;
+    }
+
+    .btn--primary {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .modal__form label {
+        font-size: 0.95rem;
+    }
+
+    .modal__form input {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+    }
+
+    /* 💻 Medium Devices (Tablets) */
+    @media (max-width: 768px) {
+    .modal {
+        max-width: 90%;
+    }
+    }
+
+    /* 🖥️ Large Screens (Desktop) */
+    @media (min-width: 1024px) {
+    .modal {
+        max-width: 460px;
+    }
+    }
+
+    /* ===== Fade-in Animation ===== */
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    /* === FIX: Prevent form from overflowing horizontally === */
+    .modal {
+    background: #fff;
+    border-radius: 14px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.25);
+    position: relative;
+    margin: 0 auto; /* ✅ Center horizontally as fallback */
+    transform: translateX(0); /* ✅ Reset any accidental shifts */
+    }
+
+    .modal__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* ✅ Always match viewport width */
+    height: 100vh; /* ✅ Always match viewport height */
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* ✅ Guarantees centering */
+    z-index: 9999;
+    padding: 1rem;
+    overflow: auto; /* ✅ Allow vertical scroll if needed */
+    }
+
+    /* === FIX: Input fields always stay inside modal boundaries === */
+    .modal__form input {
+    max-width: 100%; /* ✅ never exceed modal width */
+    box-sizing: border-box;
+    }
+
+    /* === Responsive safety net (extra protection on small screens) === */
+    @media (max-width: 480px) {
+    .modal {
+        width: 95%;
+        max-width: 95%; /* ✅ slightly narrower on very small screens */
+        padding: 1.5rem;
+    }
+    }

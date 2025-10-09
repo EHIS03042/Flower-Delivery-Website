@@ -316,7 +316,7 @@
 
     // ✅ Get base API URL (fallback to localhost for dev)
     const API_BASE =
-        process.env.REACT_APP_API_URL || "http://localhost:3001";
+        process.env.API_BASE || "http://localhost:3001";
 
     // ✅ Stripe checkout handler
     const handleCheckout = async () => {
@@ -325,7 +325,7 @@
 
         // ✅ Include all items and optional shipping details
         const { data } = await axios.post(
-            `${API_BASE}/api/payment/create-checkout-session`,
+            `${process.env.API_BASE}/api/payment/create-checkout-session`,
             {
             items: cartItems,
             shipping: {
