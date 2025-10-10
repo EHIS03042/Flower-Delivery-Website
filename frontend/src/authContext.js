@@ -13,7 +13,7 @@
     const login = (jwtToken, userData) => {
         setToken(jwtToken);
         setUser(userData);
-        localStorage.setItem("token", jwtToken);
+        localStorage.setItem("fdw_jwt", jwtToken);
         localStorage.setItem("user", JSON.stringify(userData));
         setShowAuth(false); // close modal automatically
     };
@@ -22,13 +22,13 @@
     const logout = () => {
         setToken(null);
         setUser(null);
-        localStorage.removeItem("token");
+        localStorage.removeItem("fdw_jwt");
         localStorage.removeItem("user");
     };
 
     // ✅ Restore session on page refresh
     useEffect(() => {
-        const savedToken = localStorage.getItem("token");
+        const savedToken = localStorage.getItem("fdw_jwt");
         const savedUser = localStorage.getItem("user");
         if (savedToken && savedUser) {
         setToken(savedToken);
@@ -54,3 +54,4 @@
 
     // ✅ Custom hook for consuming the context easily
     export const useAuth = () => useContext(AuthContext);
+

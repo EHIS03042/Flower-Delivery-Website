@@ -1,5 +1,7 @@
     import React, { useState } from "react";
     import "./ProductPage.css";
+    import ProductCard from "../components/ProductCard";
+
 
     export default function ProductPage() {
     const [quantity, setQuantity] = useState(1);

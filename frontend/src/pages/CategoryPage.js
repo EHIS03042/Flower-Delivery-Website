@@ -3,10 +3,13 @@
     import { useParams } from "react-router-dom";
     import axios from "axios";
     import { toOptimizedCloudinary, buildSrcSet } from "../utils/cloudinary";
+    import { addToCart as addCart } from "../utils/cart";
+    import { useAuth } from "../authContext";
     import "./CategoryPage.css";
 
     export default function CategoryPage() {
     const { slug } = useParams();
+    const { token, setShowAuth } = useAuth();
 
     // ✅ Map slug → category display name
     const categoryMap = {
@@ -22,7 +25,10 @@
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:3001";
+    // ✅ Use a safe API base (avoid /api/api when REACT_APP_API_URL already includes /api)
+    const API_BASE_RAW =
+        process.env.REACT_APP_API_URL || "http://localhost:3001/api";
+    const API_BASE = API_BASE_RAW.replace(/\/+$/, "");
 
     // ✅ Fetch products from backend (all or filtered)
     useEffect(() => {
@@ -30,8 +36,8 @@
         try {
             const url =
             categoryName === "All Flowers"
-                ? `${API_BASE}/api/flowers`
-                : `${API_BASE}/api/flowers?category=${encodeURIComponent(categoryName)}`;
+                ? `${API_BASE}/flowers`
+                : `${API_BASE}/flowers?category=${encodeURIComponent(categoryName)}`;
 
             const res = await axios.get(url);
             setProducts(Array.isArray(res.data) ? res.data : []);
@@ -53,6 +59,17 @@
             p.category.toLowerCase().replace(/\s|-/g, "") ===
             categoryName.toLowerCase().replace(/\s|-/g, ""))
     );
+
+    // ✅ Add to Cart handler (requires auth)
+    const onAdd = (p) => {
+        if (!token) {
+        setShowAuth(true);
+        return;
+        }
+        addCart(p, 1);
+        // optional toast; simple alert for now
+        alert(`Added "${p?.name || "item"}" to cart`);
+    };
 
     if (loading) {
         return (
@@ -84,22 +101,31 @@
                 const optimizedUrl = toOptimizedCloudinary(p.image);
                 const srcSet = buildSrcSet(p.image);
                 return (
-                <div className="featured-card" key={p._id}>
+                <div className="featured-card" key={p._id || p.id}>
                     <img
                     src={optimizedUrl}
                     srcSet={srcSet || undefined}
                     sizes="(max-width: 600px) 100vw, 300px"
-                    alt={p.name}
+                    alt={p.name || "Product"}
                     className="featured-img"
                     loading="lazy"
                     decoding="async"
                     />
+                    <div className="featured-meta">
                     <h3 className="featured-name">
-                    {p.name?.replaceAll('"', "") || "Untitled"}
+                        {p.name?.replaceAll('"', "") || "Untitled"}
                     </h3>
                     <p className="featured-price">
-                    ${Number(p.price).toFixed(2)}
+                        ${Number(p.price).toFixed(2)}
                     </p>
+                    <button
+                        className="btn btn--primary"
+                        onClick={() => onAdd(p)}
+                        aria-label={`Add ${p?.name || "item"} to cart`}
+                    >
+                        Add to Cart
+                    </button>
+                    </div>
                 </div>
                 );
             })}

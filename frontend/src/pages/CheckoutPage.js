@@ -1,446 +1,174 @@
-                    // import React from "react";
-                    // import "./CheckoutPage.css";
-
-                    // export default function CheckoutPage() {
-                    // return (
-                    //     <section className="checkout">
-                    //     <div className="checkout__container">
-                    //         {/* 🛍️ Product Summary */}
-                    //         <div className="checkout__item">
-                    //         <img
-                    //             src="/images/featured/snowfall.png"
-                    //             alt="Snowfall Bouquet"
-                    //             className="checkout__image"
-                    //         />
-                    //         <div className="checkout__details">
-                    //             <h3 className="checkout__title">Snowfall</h3>
-                    //             <p className="checkout__quantity">Quantity (1)</p>
-                    //         </div>
-                    //         <div className="checkout__price">$100</div>
-                    //         </div>
-
-                    //         <hr className="checkout__divider" />
-
-                    //         {/* 💸 Order Summary */}
-                    //         <div className="checkout__summary">
-                    //         <div className="checkout__row">
-                    //             <span>Subtotal</span>
-                    //             <span>$100.00</span>
-                    //         </div>
-                    //         <div className="checkout__row">
-                    //             <span>Shipping</span>
-                    //             <span className="checkout__shipping-note">
-                    //             Calculated at next step
-                    //             </span>
-                    //         </div>
-                    //         <div className="checkout__row checkout__total">
-                    //             <span>Total</span>
-                    //             <span>$100.00</span>
-                    //         </div>
-                    //         </div>
-
-                    //         {/* 🔒 Checkout Button */}
-                    //         <div className="checkout__footer">
-                    //         <button className="checkout__button">
-                    //             Secure Checkout <span className="checkout__lock">🔒</span>
-                    //         </button>
-                    //         </div>
-                    //     </div>
-                    //     </section>
-                    // );
-                    // }
-
-                    // Full Checkout.js Code(Step 1_Cart Summary, Step 2_Shipping Details, Step 3_Payment Platform)
-                    // src/pages/CheckoutPage.js
-                // import React, { useState } from "react";
-                // import "./CheckoutPage.css";
-
-                // export default function CheckoutPage() {
-                // const [step, setStep] = useState(1);
-
-                // // 📦 Shipping state
-                // const [shipping, setShipping] = useState({
-                //     fullName: "",
-                //     email: "",
-                //     phone: "",
-                //     address: "",
-                //     city: "",
-                //     zip: "",
-                //     country: "",
-                // });
-
-                // // 💳 Payment state
-                // const [payment, setPayment] = useState({
-                //     cardName: "",
-                //     cardNumber: "",
-                //     expiry: "",
-                //     cvv: "",
-                // });
-
-                // const handleShippingChange = (e) => {
-                //     const { name, value } = e.target;
-                //     setShipping({ ...shipping, [name]: value });
-                // };
-
-                // const handlePaymentChange = (e) => {
-                //     const { name, value } = e.target;
-                //     setPayment({ ...payment, [name]: value });
-                // };
-
-                // const nextStep = () => setStep(step + 1);
-                // const prevStep = () => setStep(step - 1);
-
-                // return (
-                //     <section className="checkout">
-                //     <div className="checkout__container">
-
-                //         {/* 📊 Step Indicator */}
-                //         <div className="checkout__steps">
-                //         <div className={`step ${step >= 1 ? "active" : ""}`}>1. Review</div>
-                //         <div className={`step ${step >= 2 ? "active" : ""}`}>2. Shipping</div>
-                //         <div className={`step ${step >= 3 ? "active" : ""}`}>3. Payment</div>
-                //         </div>
-
-                //         {/* 🥇 STEP 1: Order Summary */}
-                //         {step === 1 && (
-                //         <>
-                //             <div className="checkout__item">
-                //             <img
-                //                 src="/images/featured/snowfall.png"
-                //                 alt="Snowfall Bouquet"
-                //                 className="checkout__image"
-                //             />
-                //             <div className="checkout__details">
-                //                 <h3 className="checkout__title">Snowfall</h3>
-                //                 <p className="checkout__quantity">Quantity (1)</p>
-                //             </div>
-                //             <div className="checkout__price">$100</div>
-                //             </div>
-
-                //             <hr className="checkout__divider" />
-
-                //             <div className="checkout__summary">
-                //             <div className="checkout__row">
-                //                 <span>Subtotal</span>
-                //                 <span>$100.00</span>
-                //             </div>
-                //             <div className="checkout__row">
-                //                 <span>Shipping</span>
-                //                 <span className="checkout__shipping-note">
-                //                 Calculated at next step
-                //                 </span>
-                //             </div>
-                //             <div className="checkout__row checkout__total">
-                //                 <span>Total</span>
-                //                 <span>$100.00</span>
-                //             </div>
-                //             </div>
-
-                //             <div className="checkout__footer">
-                //             <button className="checkout__button" onClick={nextStep}>
-                //                 Secure Checkout <span className="checkout__lock">🔒</span>
-                //             </button>
-                //             </div>
-                //         </>
-                //         )}
-
-                //         {/* 🥈 STEP 2: Shipping Information */}
-                //         {step === 2 && (
-                //         <div className="checkout-form">
-                //             <h2 className="checkout-title">Shipping Information</h2>
-                //             <form>
-                //             <label>
-                //                 Full Name
-                //                 <input
-                //                 type="text"
-                //                 name="fullName"
-                //                 value={shipping.fullName}
-                //                 onChange={handleShippingChange}
-                //                 />
-                //             </label>
-                //             <label>
-                //                 Email
-                //                 <input
-                //                 type="email"
-                //                 name="email"
-                //                 value={shipping.email}
-                //                 onChange={handleShippingChange}
-                //                 />
-                //             </label>
-                //             <label>
-                //                 Phone
-                //                 <input
-                //                 type="tel"
-                //                 name="phone"
-                //                 value={shipping.phone}
-                //                 onChange={handleShippingChange}
-                //                 />
-                //             </label>
-                //             <label>
-                //                 Address
-                //                 <input
-                //                 type="text"
-                //                 name="address"
-                //                 value={shipping.address}
-                //                 onChange={handleShippingChange}
-                //                 />
-                //             </label>
-                //             <div className="row">
-                //                 <label>
-                //                 City
-                //                 <input
-                //                     type="text"
-                //                     name="city"
-                //                     value={shipping.city}
-                //                     onChange={handleShippingChange}
-                //                 />
-                //                 </label>
-                //                 <label>
-                //                 Zip Code
-                //                 <input
-                //                     type="text"
-                //                     name="zip"
-                //                     value={shipping.zip}
-                //                     onChange={handleShippingChange}
-                //                 />
-                //                 </label>
-                //             </div>
-                //             <label>
-                //                 Country
-                //                 <input
-                //                 type="text"
-                //                 name="country"
-                //                 value={shipping.country}
-                //                 onChange={handleShippingChange}
-                //                 />
-                //             </label>
-                //             </form>
-
-                //             <div className="checkout-actions">
-                //             <button onClick={prevStep} className="btn-secondary">
-                //                 Back
-                //             </button>
-                //             <button onClick={nextStep} className="btn-primary">
-                //                 Continue to Payment
-                //             </button>
-                //             </div>
-                //         </div>
-                //         )}
-
-                //         {/* 🥉 STEP 3: Payment */}
-                //         {step === 3 && (
-                //         <div className="checkout-form">
-                //             <h2 className="checkout-title">Payment Details</h2>
-                //             <form>
-                //             <label>
-                //                 Name on Card
-                //                 <input
-                //                 type="text"
-                //                 name="cardName"
-                //                 value={payment.cardName}
-                //                 onChange={handlePaymentChange}
-                //                 />
-                //             </label>
-                //             <label>
-                //                 Card Number
-                //                 <input
-                //                 type="text"
-                //                 name="cardNumber"
-                //                 value={payment.cardNumber}
-                //                 onChange={handlePaymentChange}
-                //                 />
-                //             </label>
-                //             <div className="row">
-                //                 <label>
-                //                 Expiry Date
-                //                 <input
-                //                     type="text"
-                //                     name="expiry"
-                //                     placeholder="MM/YY"
-                //                     value={payment.expiry}
-                //                     onChange={handlePaymentChange}
-                //                 />
-                //                 </label>
-                //                 <label>
-                //                 CVV
-                //                 <input
-                //                     type="password"
-                //                     name="cvv"
-                //                     value={payment.cvv}
-                //                     onChange={handlePaymentChange}
-                //                 />
-                //                 </label>
-                //             </div>
-                //             </form>
-
-                //             <div className="checkout-actions">
-                //             <button onClick={prevStep} className="btn-secondary">
-                //                 Back
-                //             </button>
-                //             <button
-                //                 onClick={() => alert("✅ Order placed successfully!")}
-                //                 className="btn-primary"
-                //             >
-                //                 Complete Order
-                //             </button>
-                //             </div>
-                //         </div>
-                //         )}
-                //     </div>
-                //     </section>
-                // );
-                // }
-            //  Recoding For Stripe
-                // src/pages/CheckoutPage.js
-        // ✅ src/pages/CheckoutPage.js
-    import React, { useState } from "react";
-    import axios from "axios";
+        //  Recoding For Stripe
+        // src/pages/CheckoutPage.js
+    import React, { useEffect, useMemo, useState } from "react";
     import "./CheckoutPage.css";
+    import api from "../utils/api";
+    import { getCart, updateQty, removeFromCart, clearCart } from "../utils/cart";
 
     export default function CheckoutPage() {
-    // 🛍️ Cart state (replace with real cart context/state later)
-    const [cartItems] = useState([
-        {
-        name: "Snowfall",
-        price: 100,
-        quantity: 1,
-        image: "/images/featured/snowfall.png",
-        },
-    ]);
-
-    // 📦 Shipping info
+    const [cart, setCart] = useState([]);
     const [address, setAddress] = useState("");
     const [city, setCity] = useState("");
     const [zip, setZip] = useState("");
     const [email, setEmail] = useState("");
 
-    // ✅ Get base API URL (fallback to localhost for dev)
-    const API_BASE =
-        process.env.API_BASE || "http://localhost:3001";
+    // Load cart once when the page mounts
+    useEffect(() => {
+        setCart(getCart());
+    }, []);
 
-    // ✅ Stripe checkout handler
+    const subtotal = useMemo(
+        () =>
+        cart.reduce(
+            (sum, it) => sum + Number(it.price || 0) * (it.quantity || 1),
+            0
+        ),
+        [cart]
+    );
+
+    const handleQty = (id, qty) => {
+        const next = updateQty(id, qty);
+        setCart(next);
+    };
+
+    const handleRemove = (id) => {
+        const next = removeFromCart(id);
+        setCart(next);
+    };
+
     const handleCheckout = async () => {
-        try {
-        console.log("✅ API URL:", `${API_BASE}/api/payment/create-checkout-session`);
-
-        // ✅ Include all items and optional shipping details
-        const { data } = await axios.post(
-            `${process.env.API_BASE}/api/payment/create-checkout-session`,
-            {
-            items: cartItems,
-            shipping: {
-                address,
-                city,
-                zip,
-                email,
-            },
-            }
-        );
-
-        // ✅ Stripe URL redirect
-        if (data?.url) {
-            window.location.href = data.url;
-        } else {
-            alert("⚠️ Payment session could not be created. Please try again.");
+        if (!cart.length) {
+        alert("Your cart is empty.");
+        return;
         }
-        } catch (error) {
-        console.error("❌ Checkout error:", error.response?.data || error.message);
-        alert(
-            "Something went wrong with the payment. Please check your backend logs or Stripe settings."
-        );
+
+        try {
+        // Call your backend to create a Stripe Checkout session
+        const { data } = await api.post("/payment/create-checkout-session", {
+            items: cart.map((it) => ({
+            name: it.name,
+            price: Number(it.price),
+            quantity: it.quantity || 1,
+            image: it.image || "",
+            })),
+            // Optional: attach shipping/contact for future use
+            shipping: { address, city, zip, email },
+        });
+
+        if (data?.url) {
+            window.location.href = data.url; // redirect to Stripe
+        } else {
+            alert("Unable to start checkout. Please try again.");
+        }
+        } catch (err) {
+        console.error("Checkout error:", err?.response?.data || err);
+        alert(err?.response?.data?.error || "Payment failed to initialize.");
         }
     };
 
     return (
         <section className="checkout">
         <div className="checkout__container">
-            {/* 🛍️ Step 1: Cart Summary */}
-            <div className="checkout__item">
-            <img
-                src={cartItems[0].image}
-                alt={cartItems[0].name}
-                className="checkout__image"
-            />
-            <div className="checkout__details">
-                <h3 className="checkout__title">{cartItems[0].name}</h3>
-                <p className="checkout__quantity">
-                Quantity ({cartItems[0].quantity})
-                </p>
-            </div>
-            <div className="checkout__price">${cartItems[0].price}</div>
+            {/* Items */}
+            <div className="checkout__items">
+            <h2 className="checkout__title">Your Basket</h2>
+
+            {!cart.length ? (
+                <p>Your cart is empty.</p>
+            ) : (
+                cart.map((it) => (
+                <div className="checkout__item" key={it._id || it.id}>
+                    <img
+                    src={it.image || "/images/placeholder.png"}
+                    alt={it.name}
+                    className="checkout__image"
+                    />
+                    <div className="checkout__details">
+                    <h3 className="checkout__title">{it.name}</h3>
+                    <div className="checkout__qty">
+                        <button
+                        onClick={() =>
+                            handleQty(it._id || it.id, (it.quantity || 1) - 1)
+                        }
+                        aria-label="Decrease quantity"
+                        >
+                        -
+                        </button>
+                        <span>{it.quantity || 1}</span>
+                        <button
+                        onClick={() =>
+                            handleQty(it._id || it.id, (it.quantity || 1) + 1)
+                        }
+                        aria-label="Increase quantity"
+                        >
+                        +
+                        </button>
+                    </div>
+                    </div>
+                    <div className="checkout__price">
+                    ${(Number(it.price || 0) * (it.quantity || 1)).toFixed(2)}
+                    </div>
+                    <button
+                    className="checkout__remove"
+                    onClick={() => handleRemove(it._id || it.id)}
+                    >
+                    Remove
+                    </button>
+                </div>
+                ))
+            )}
+
+            {cart.length > 0 && (
+                <div className="checkout__summary">
+                <div className="checkout__row">
+                    <span>Subtotal</span>
+                    <span>${subtotal.toFixed(2)}</span>
+                </div>
+                <div className="checkout__row">
+                    <span>Shipping</span>
+                    <span className="checkout__shipping-note">
+                    Calculated at next step
+                    </span>
+                </div>
+                <div className="checkout__row checkout__total">
+                    <span>Total</span>
+                    <span>${subtotal.toFixed(2)}</span>
+                </div>
+                </div>
+            )}
             </div>
 
-            <hr className="checkout__divider" />
-
-            {/* 💸 Order Total */}
-            <div className="checkout__summary">
-            <div className="checkout__row">
-                <span>Subtotal</span>
-                <span>${cartItems[0].price}</span>
-            </div>
-            <div className="checkout__row">
-                <span>Shipping</span>
-                <span className="checkout__shipping-note">
-                Calculated at next step
-                </span>
-            </div>
-            <div className="checkout__row checkout__total">
-                <span>Total</span>
-                <span>${cartItems[0].price}</span>
-            </div>
-            </div>
-
-            {/* 📦 Step 2: Shipping Info */}
-            <div className="checkout__form">
+            {/* Shipping / Contact */}
+            <div className="checkout__forms">
             <h2 className="checkout__form-title">Shipping Details</h2>
 
             <label>
                 Address
                 <input
-                type="text"
-                placeholder="123 Flower Street"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                required
                 />
             </label>
 
             <label>
                 City
-                <input
-                type="text"
-                placeholder="Bloomville"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                required
-                />
+                <input value={city} onChange={(e) => setCity(e.target.value)} />
             </label>
 
             <label>
                 ZIP / Postal Code
-                <input
-                type="text"
-                placeholder="12345"
-                value={zip}
-                onChange={(e) => setZip(e.target.value)}
-                required
-                />
+                <input value={zip} onChange={(e) => setZip(e.target.value)} />
             </label>
 
             <label>
-                Email Address
+                Email
                 <input
                 type="email"
-                placeholder="you@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required
                 />
             </label>
-            </div>
 
-            {/* 💳 Step 3: Payment Section */}
-            <div className="checkout__payment">
             <h2 className="checkout__form-title">Payment</h2>
             <p className="checkout__note">
                 You will be redirected to a secure Stripe checkout page to complete
@@ -449,6 +177,16 @@
 
             <button className="checkout__button payment" onClick={handleCheckout}>
                 Pay Securely Now 💳
+            </button>
+
+            <button
+                className="checkout__button secondary"
+                onClick={() => {
+                clearCart();
+                setCart([]);
+                }}
+            >
+                Clear Cart
             </button>
             </div>
         </div>

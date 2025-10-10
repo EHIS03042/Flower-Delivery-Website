@@ -9,6 +9,7 @@
     const [mode, setMode] = useState("signin"); // 'signin' | 'signup'
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
     const [busy, setBusy] = useState(false);
     const [error, setError] = useState("");
 
@@ -19,10 +20,12 @@
 
         try {
         const path = mode === "signin" ? "/auth/login" : "/auth/register";
-        const { data } = await api.post(path, { email, password });
+        const body = mode === "signin" ? { email, password } : { name, email, password };
+        const { data } = await api.post(path, body);
 
         // ✅ expected response: { token, user }
         if (data?.token) {
+            localStorage.setItem("fdw_jwt", data.token);
             login(data.token, data.user);
             setShowAuth(false);
         } else {
@@ -52,6 +55,17 @@
             </h3>
 
             <form className="modal__form" onSubmit={submit}>
+            {mode === "signup" && (
+            <label>
+                <span>Name</span>
+                <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                />
+            </label>
+            )}
             <label>
                 <span>Email</span>
                 <input
@@ -112,3 +126,4 @@
         </div>
     );
     }
+
