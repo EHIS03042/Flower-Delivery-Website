@@ -165,8 +165,8 @@
         try {
             const url =
             categoryName === "All Flowers"
-                ? `${API_BASE}/api/flowers`
-                : `${API_BASE}/api/flowers?category=${encodeURIComponent(categoryName)}`;
+                ? `${API_BASE}/flowers`
+                : `${API_BASE}/flowers?category=${encodeURIComponent(categoryName)}`;
             const res = await axios.get(url);
             setProducts(Array.isArray(res.data) ? res.data : []);
         } catch (err) {
