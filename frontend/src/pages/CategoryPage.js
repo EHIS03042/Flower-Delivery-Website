@@ -27,7 +27,7 @@
 
     // ✅ Use a safe API base (avoid /api/api when REACT_APP_API_URL already includes /api)
     const API_BASE_RAW =
-        process.env.REACT_APP_API_URL || "http://localhost:3001/api";
+        process.env.API_BASE || "http://localhost:3001/api";
     const API_BASE = API_BASE_RAW.replace(/\/+$/, "");
 
     // ✅ Fetch products from backend (all or filtered)
