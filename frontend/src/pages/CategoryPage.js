@@ -27,7 +27,7 @@
 
     // ✅ Use a safe API base (avoid /api/api when REACT_APP_API_URL already includes /api)
     const API_BASE_RAW =
-        process.env.API_BASE || "http://localhost:3001/api";
+        process.env.API_BASE || "http://localhost:3001/";
     const API_BASE = API_BASE_RAW.replace(/\/+$/, "");
 
     // ✅ Fetch products from backend (all or filtered)
@@ -36,8 +36,8 @@
         try {
             const url =
             categoryName === "All Flowers"
-                ? `${API_BASE}/api/flowers`
-                : `${API_BASE}/api/flowers?category=${encodeURIComponent(categoryName)}`;
+                ? `${API_BASE_RAW}/api/flowers`
+                : `${API_BASE_RAW}/api/flowers?category=${encodeURIComponent(categoryName)}`;
 
             const res = await axios.get(url);
             setProducts(Array.isArray(res.data) ? res.data : []);
