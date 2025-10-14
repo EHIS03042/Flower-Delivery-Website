@@ -1,0 +1,95 @@
+    /* src/components/About.css */
+
+    .about-section {
+    width: 100%;
+    background: #fff;
+    padding: 4rem 4rem;
+    display: flex;
+    justify-content: center;
+    }
+
+    .about-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    }
+
+    .about-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.8rem;
+    }
+
+    .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    }
+
+    .about-subheading {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #555;
+    }
+
+    .about-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #000;
+    }
+
+    .about-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    }
+
+    .about-button {
+    padding: 0.7rem 2rem;
+    border: 1px solid #000;
+    background: transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    }
+
+    .about-button:hover {
+    background: #000;
+    color: #fff;
+    }
+
+    /* ✅ Responsive */
+    @media (max-width: 768px) {
+    .about-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .about-heading {
+        font-size: 1.8rem;
+    }
+
+    .about-title {
+        font-size: 1.5rem;
+    }
+
+    .about-description {
+        font-size: 0.95rem;
+    }
+    }
+
+    /* Media Overide */
+    @media (max-width: 1440px) {
+    .about-container {
+        padding: 1rem 1.0rem;
+    }
+    }
+    

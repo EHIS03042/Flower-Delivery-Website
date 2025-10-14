@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+backend/node_modules/
+
+# Environment variables
+.env
+backend/.env
+backend/.env.local
+
+# Dependency directories
+jspm_packages/
+
+# Uploads / static files
+backend/uploads/
+
+# Logs and runtime data
+backend/logs/
+*.log
+
+# Build output (if using TypeScript, Babel, etc.)
+backend/dist/
+
+# Test coverage reports
+backend/coverage/
+
+# Cache files
+.cache/
+.eslintcache
+
+# Database dumps / backups (if any)
+*.bson
+*.json
+
+# IDE/editor settings (optional but recommended)
+.vscode/

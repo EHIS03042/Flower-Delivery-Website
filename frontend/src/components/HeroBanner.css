@@ -1,0 +1,143 @@
+    /* === Base Hero Section === */
+    .hero {
+    background: #fff;
+    padding: 0 2rem; /* remove vertical padding */
+    padding-top: 0;  /* ensure no top gap */
+    padding-bottom: 0; /* ensure no bottom gap */
+    margin: 0;       /* reset default browser margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+
+    /* === Title and tagline === */
+    .hero__content {
+    text-align: left;
+    width: 100%;
+    max-width: 1100px;
+    margin: 1rem auto 1rem;
+    }
+
+    .hero__title {
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    }
+
+    .hero__brand {
+    font-weight: 700;
+    font-size: 4.8rem;
+    }
+
+    .hero__subtitle {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    }
+
+    .hero__subtitle em {
+    font-style: italic;
+    }
+
+    /* === Secondary section (Image + Text side-by-side) === */
+    .hero__image-section {
+    display: flex;
+    flex-direction: row; /* ✅ Always horizontal */
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 0;
+    flex-wrap: nowrap;
+    }
+
+    .hero__image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    }
+
+    .hero__image {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 4px;
+    object-fit: cover;
+    }
+
+    .hero__divider {
+    width: 1px;
+    background: #222;
+    height: 80%;
+    min-height: 200px;
+    }
+
+    .hero__description {
+    flex: 1;
+    font-size: 1.25rem;
+    color: #333;
+    line-height: 1.8;
+    font-weight: 400;
+    max-width: 420px;
+    text-align: left;
+    }
+
+    .hero__description p {
+    margin: 0;
+    }
+
+    /* 📱 Responsive — stay horizontal but scale */
+    @media (max-width: 1440px) {
+    .hero__image {
+        max-width: 100%; 
+    }
+    }
+    @media (max-width: 768px) {
+    .hero__image-section {
+        flex-direction: row; /* ✅ Keep horizontal */
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .hero__image {
+        max-width: 100%; 
+    }
+
+    .hero__description {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 50%;
+    }
+
+    .hero__divider {
+        height: 120px;
+    }
+
+    .hero__title {
+        font-size: 2.8rem;
+    }
+
+    .hero__brand {
+        font-size: 3rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.2rem;
+    }
+    }
+
+    /* 📱 Ultra-small phones */
+    @media (max-width: 480px) {
+    .hero__image {
+        max-width: 95%;
+        height: 11em
+    }
+    .hero__description {
+        font-size: 0.95rem;
+        max-width: 50%;
+    }
+    }

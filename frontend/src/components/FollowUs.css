@@ -1,0 +1,76 @@
+    /* === Follow Us Section === */
+    .follow {
+    background: #fff;
+    padding: 4rem 2rem;
+    border-top: 1px solid #ddd;
+    }
+
+    .follow__container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    }
+
+    /* === Storefront Image === */
+    .follow__image-wrapper {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    }
+
+    .follow__image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    object-fit: cover;
+    }
+
+    /* === Title === */
+    .follow__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 1.5rem;
+    }
+
+    /* === Icons === */
+    .follow__icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    }
+
+    .follow__icon {
+    font-size: 1.7rem;
+    color: #111;
+    transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .follow__icon:hover {
+    color: #c2185b; /* Accent color */
+    transform: translateY(-3px);
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+    .follow {
+        padding: 3rem 1.5rem;
+    }
+
+    .follow__title {
+        font-size: 1.6rem;
+    }
+
+    .follow__icons {
+        gap: 1.5rem;
+    }
+
+    .follow__icon {
+        font-size: 1.5rem;
+    }
+    }
