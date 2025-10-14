@@ -3,7 +3,7 @@
     .about-section {
     width: 100%;
     background: #fff;
-    padding: 6rem 2rem;
+    padding: 4rem 4rem;
     display: flex;
     justify-content: center;
     }
@@ -85,3 +85,11 @@
         font-size: 0.95rem;
     }
     }
+
+    /* Media Overide */
+    @media (max-width: 1440px) {
+    .about-container {
+        padding: 1rem 1.0rem;
+    }
+    }
+    

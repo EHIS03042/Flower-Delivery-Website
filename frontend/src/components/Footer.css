@@ -121,7 +121,7 @@
     /* === Responsive Design === */
     @media (max-width: 1024px) {
     .footer__grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
     }
 

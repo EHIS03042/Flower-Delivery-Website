@@ -118,3 +118,28 @@
         display: none;
     }
     }
+
+        /* ----- Media over-ride to stop left-edge bleed ----- */
+    .navbar { overflow-x: clip; }
+
+    /* --- Desktop:  --- */
+    @media (min-width: 1024px) {
+    .navbar__menu {
+        position: static;          /* already set, restated for clarity */
+        width: 100%;               /* override the mobile width:70% */
+        display: flex;             /* already set, restated */
+        flex-direction: row;       /* already set, restated */
+        flex-wrap: nowrap;         /* prevent wrapping */
+        gap: 32px;                 /* keep your spacing */
+        padding: 0 24px;           /* gentle left/right gutter so "Home" isn't glued to edge */
+        background: none;          /* ensure no white panel styling from mobile */
+        box-shadow: none;          /* ensure no mobile drawer shadow */
+    }
+
+    /* Prevent long labels from breaking across lines */
+    .navbar__menu li,
+    .navbar__menu li a {
+        white-space: nowrap;
+    }
+    }
+

@@ -7,7 +7,7 @@
     import ContactUs from "../components/ContactUs";
     import OurService from "../components/OurService";
     import Testimonials from "../components/Testimonials";
-    import Footer from "../components/Footer";
+    // import Footer from "../components/Footer";
 
     export default function HomePage() {
     return (
@@ -20,7 +20,7 @@
         <ContactUs />
         <OurService />
         <Testimonials />
-        <Footer />
+        {/* <Footer /> */}
         </>
     );
     }

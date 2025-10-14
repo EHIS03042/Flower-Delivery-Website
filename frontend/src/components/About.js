@@ -6,7 +6,7 @@
     return (
         <section className="about-section" id="about">
         <div className="about-container">
-            <h2 className="about-heading">About us</h2>
+            <h2 className="about-heading">About Us</h2>
             <div className="about-content">
             <div className="about-text">
                 <h4 className="about-subheading">Our Story</h4>

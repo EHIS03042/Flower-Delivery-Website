@@ -91,6 +91,11 @@
     }
 
     /* 📱 Responsive — stay horizontal but scale */
+    @media (max-width: 1440px) {
+    .hero__image {
+        max-width: 100%; 
+    }
+    }
     @media (max-width: 768px) {
     .hero__image-section {
         flex-direction: row; /* ✅ Keep horizontal */
@@ -99,7 +104,7 @@
     }
 
     .hero__image {
-        max-width: 50%; /* Shrink image */
+        max-width: 100%; 
     }
 
     .hero__description {
@@ -129,6 +134,7 @@
     @media (max-width: 480px) {
     .hero__image {
         max-width: 95%;
+        height: 11em
     }
     .hero__description {
         font-size: 0.95rem;
